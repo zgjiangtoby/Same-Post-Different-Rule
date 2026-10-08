@@ -1,0 +1,29 @@
+{
+  "dataset": "HateCheck released test suite",
+  "repository": "https://github.com/paul-rottger/hatecheck-data",
+  "revision": "3490854f969111a32c55c05f0d9788b471337fa9",
+  "files": {
+    "test_suite_cases.csv": {"url": "https://raw.githubusercontent.com/paul-rottger/hatecheck-data/3490854f969111a32c55c05f0d9788b471337fa9/test_suite_cases.csv", "bytes": 664630, "sha256": "ecf0dc1e93fccc90b6f880e632b19e635c0f0a68b3157915a9e20b6938f121cf"},
+    "README.md": {"url": "https://raw.githubusercontent.com/paul-rottger/hatecheck-data/3490854f969111a32c55c05f0d9788b471337fa9/README.md", "bytes": 2744, "sha256": "4b609fe3c0978c03d70c6db19eafb5cd74664c69608a6a7a4de5a6cfff4f2531"},
+    "LICENSE": {"url": "https://raw.githubusercontent.com/paul-rottger/hatecheck-data/3490854f969111a32c55c05f0d9788b471337fa9/LICENSE", "bytes": 18656, "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"}
+  },
+  "rows": 3728,
+  "native_label_counts": {"hateful": 2563, "non-hateful": 1165},
+  "functionality_label_counts": {
+    "derog_neg_emote_h": {"hateful": 140}, "derog_neg_attrib_h": {"hateful": 140}, "derog_dehum_h": {"hateful": 140}, "derog_impl_h": {"hateful": 140},
+    "threat_dir_h": {"hateful": 133}, "threat_norm_h": {"hateful": 140}, "slur_h": {"hateful": 144}, "slur_homonym_nh": {"non-hateful": 30}, "slur_reclaimed_nh": {"non-hateful": 81},
+    "profanity_h": {"hateful": 140}, "profanity_nh": {"non-hateful": 100}, "ref_subs_clause_h": {"hateful": 140}, "ref_subs_sent_h": {"hateful": 133},
+    "negate_pos_h": {"hateful": 140}, "negate_neg_nh": {"non-hateful": 133}, "phrase_question_h": {"hateful": 140}, "phrase_opinion_h": {"hateful": 133},
+    "ident_neutral_nh": {"non-hateful": 126}, "ident_pos_nh": {"non-hateful": 189}, "counter_quote_nh": {"non-hateful": 173}, "counter_ref_nh": {"non-hateful": 141},
+    "target_obj_nh": {"non-hateful": 65}, "target_indiv_nh": {"non-hateful": 65}, "target_group_nh": {"non-hateful": 62},
+    "spell_char_swap_h": {"hateful": 133}, "spell_char_del_h": {"hateful": 140}, "spell_space_del_h": {"hateful": 141}, "spell_space_add_h": {"hateful": 173}, "spell_leet_h": {"hateful": 173}
+  },
+  "schema": ["", "functionality", "case_id", "test_case", "label_gold", "target_ident", "direction", "focus_words", "focus_lemma", "ref_case_id", "ref_templ_id", "templ_id", "case_templ"],
+  "existing_id_fields": {"case_id_unique": 3728, "templ_id_unique": 845, "ref_case_id_present": 2046, "ref_templ_id_present": 2338},
+  "exact_text_groups": {"unique": 3728, "duplicate_groups": 0, "extra_rows": 0, "conflicting_hateful_groups": 0, "conflicting_directed_groups": 0},
+  "native_template_membership": {"singleton_templates": 403, "seven_case_templates": 421, "eighteen_case_templates": 21, "cross_functionality_templates": 0, "cross_hateful_templates": 0, "cross_direction_templates": 0},
+  "released_reference_links": {"ref_case_id_present_and_in_suite": 2046, "ref_templ_id_present_and_in_suite": 2338, "ref_case_cross_native_hateful": 600, "ref_case_cross_native_direction": 789, "ref_templ_cross_native_hateful": 892, "ref_templ_cross_native_direction": 1081},
+  "partner_links_are_released_fields": true,
+  "new_human_annotations": 0,
+  "raw_text_in_manifest": false
+}

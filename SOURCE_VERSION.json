@@ -1,0 +1,39 @@
+{
+  "frozen_files_sha256": {
+    "metadata/hatecheck_source_manifest.json": "2905ed70dbc0ed5a632960e2033e699d8f5c27526e0121d7b5382516e87e0319",
+    "paper1/FORMAL_PROTOCOL_V1.md": "d4277bddf99e7aa064f99ac5a6d0ffd7909dad4847803c8fcd99341643e55bd7",
+    "paper1/POLICY_FACTORIAL_PLAN_20261002.md": "0cfffdf77d3d5e5960cbd893e0216118e9d411cf32581fcdb368c62f673c953f",
+    "paper1/adjusted_template_intervals.py": "dd1bf69de92e084da25383cd5a82886a62e5d35af839d2010d07414c8cbe01d6",
+    "paper1/crossing_structure.py": "cf789e292484a3ff367e65ad7afc532b74f546c32ae189b04360a6c31e24200f",
+    "paper1/evaluate.py": "aa4eef0527b83bf17ed5b9cacea85ac7dc0714528d88058265e635f85abd6ecd",
+    "paper1/formal.py": "1e3524e69800c779a78641f67258ebd20f9f968db496eb72e7e0ba2b059369d6",
+    "paper1/hatecheck_task.py": "bc0bda8ced3a9f7863dac0a39b0549167aa4c07da7592dc6eede1d67d4bb2f32",
+    "paper1/policy_factorial.py": "9edb34ac6e6d7f2eedebc48309bd27df3059f30a013aea4b5cd5e5496665e9f0",
+    "paper1/prepare.py": "b6a9f2c908aefdf0c765f6c189f91958e3a2f8a2f29d1377f434d1ac2951da8d",
+    "paper1/test_adjusted_template_intervals.py": "8e2d54e105498dd57189cddacc28aaa79dc66c284f82d62d915e8a40f50df21f",
+    "paper1/test_evaluate.py": "d59e280f68da01e244a7dfdd7a9e3db620766fcb99603aa5b558f13940c83879",
+    "paper1/test_formal.py": "6332b376b05c3c68ebe79ae9e7dbcd1ac500d66f504eb385a003d5fb12eac353",
+    "paper1/test_policy_factorial.py": "e48442ac2ba99331201a8479d06773f5ce1a8bb96a2d1891beb0e3578e0f4ff5",
+    "shared/generate.py": "f81bc57760070dbef65aaf60fa71ce3c70aa71f345224b7a4932e493f170ef6c",
+    "shared/test_tokenizer.py": "37037055fc36a968def5a4198bed1a4f5382092ec348593fa56f6e0226032dec"
+  },
+  "included_dataset_records": 0,
+  "included_predictions_or_weights": 0,
+  "manuscript_version": "Revised_20261003",
+  "metadata_only_files": [
+    "metadata/hatecheck_source_manifest.json"
+  ],
+  "paired_overleaf_archive": "WWW_EXTRA_P1_MEASUREMENT_Revised_20261003_Overleaf.zip",
+  "paired_overleaf_sha256": "587c395da4f2ebc66086e9d63ae687a1e83137ca0d17bffafd8222207bdec44e",
+  "project_license_added": false,
+  "release_additions": [
+    "README.md",
+    "DATA_INTERFACE.md",
+    ".gitignore",
+    "environment/requirements.txt"
+  ],
+  "scientific_source_changes": [],
+  "source_release_date": "2026-10-08",
+  "title": "Same Post, Different Rule: Measuring Content-Attribute Stability in Web Moderation",
+  "validation_scope": "Offline synthetic tests and source/archive checks only; no full empirical rerun."
+}

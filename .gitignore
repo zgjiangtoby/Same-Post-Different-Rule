@@ -1,0 +1,11 @@
+# User-acquired inputs and generated artifacts. The release contains source only.
+paper1/data/
+paper1/prepared/
+paper1/runs/
+paper1/results/
+models/
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

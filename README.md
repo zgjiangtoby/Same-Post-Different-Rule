@@ -4,12 +4,9 @@ This is the source code for *Same Post, Different Rule: Measuring Content-Attrib
 
 ## Environment and inputs
 
-The environment is Python 3.11, PyTorch 2.9.1, Transformers 4.57.2, tokenizers 0.22.1, NumPy 1.26.4, and regex 2025.11.3; see `environment/requirements.txt`. Full generation uses CUDA, bfloat16, SDPA, local tokenizers, greedy decoding, seed 17, batch 8, 8,192 input tokens, and 128 new tokens. Install packages and a compatible CUDA build of PyTorch in your own environment. No package, dataset, or model download is needed for the CPU checks below.
-
+The environment is Python 3.11, PyTorch 2.9.1, Transformers 4.57.2, tokenizers 0.22.1, NumPy 1.26.4, and regex 2025.11.3; see `environment/requirements.txt`. Full generation uses CUDA, bfloat16, SDPA, local tokenizers, greedy decoding, seed 17, batch 8, 8,192 input tokens, and 128 new tokens. Install packages and a compatible CUDA build of PyTorch in your own environment.
 
 ## Offline CPU checks
-
-These use only inline synthetic fixtures. They do not load source datasets or model files, use a GPU, or generate manuscript numbers.
 
 ```bash
 sha256sum -c SHA256SUMS
@@ -20,7 +17,6 @@ CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEB
 CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 python shared/generate.py --self-test
 ```
 
-`SHA256SUMS` is the release checksum manifest. The adjusted-template test is a standalone script and is not invoked by `unittest discover`. `shared/test_tokenizer.py` and `policy_factorial.py token-check` need the pinned local tokenizer snapshots and are separate preflight checks for the full run.
 
 ## Original SBIC and HateCheck measurement
 
@@ -36,7 +32,7 @@ for task in sbic_test_formal_v1 hatecheck_test_formal_v1; do
 done
 ```
 
-For each task/model pair, set the variables as below and run the subsequent block. Complete all main stage-one shards before starting fresh repeat processes. Choose an available GPU for each shard; `gpu=0` is merely an example. Four logical shards are required even if one GPU executes them sequentially. Keep command receipts, distinct main/repeat runs, and all failures.
+For each task/model pair, set the variables as below and run the subsequent block. Complete all main stage-one shards before starting fresh repeat processes. Choose an available GPU for each shard; `gpu=0` is merely an example. Four logical shards are required even if one GPU executes them sequentially. 
 
 ```bash
 # Choose ONE pair, run the block, then repeat with the other three pairs.

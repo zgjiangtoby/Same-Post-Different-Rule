@@ -1,30 +1,11 @@
 # Same Post, Different Rule — source release
 
-Source for the 2026-10-03 Revised manuscript, *Same Post, Different Rule: Measuring Content-Attribute Stability in Web Moderation*. This is a source-only project: it contains the original formal measurement, the subsequent policy-function × expression study, adjusted native-template intervals, and the descriptive crossing analysis. It contains no corpus records, labels, prepared requests, predictions, results, model weights, or manuscript PDF. The paper's results are **not** reproduced by the included synthetic checks.
-
-Run commands from this directory with Python 3.11. Set `PYTHONPATH=paper1:shared` so sibling modules can import each other. The source Python files and the two protocol documents are copied byte for byte from the frozen reproducibility package; `metadata/hatecheck_source_manifest.json` is the original metadata manifest at a new location. The formal preparation binds the exact `paper1/FORMAL_PROTOCOL_V1.md` bytes. Recreate preparations with this release; do not mix prepared artifacts from another source/protocol binding. `paper1/POLICY_FACTORIAL_PLAN_20261002.md` describes the later follow-up, which was designed after the original results.
+This is the source code for *Same Post, Different Rule: Measuring Content-Attribute Stability in Web Moderation*.
 
 ## Environment and inputs
 
-The recorded environment is Python 3.11, PyTorch 2.9.1, Transformers 4.57.2, tokenizers 0.22.1, NumPy 1.26.4, and regex 2025.11.3; see `environment/requirements.txt`. Full generation uses CUDA, bfloat16, SDPA, local tokenizers, greedy decoding, seed 17, batch 8, 8,192 input tokens, and 128 new tokens. Install packages and a compatible CUDA build of PyTorch in your own environment. No package, dataset, or model download is needed for the CPU checks below.
+The environment is Python 3.11, PyTorch 2.9.1, Transformers 4.57.2, tokenizers 0.22.1, NumPy 1.26.4, and regex 2025.11.3; see `environment/requirements.txt`. Full generation uses CUDA, bfloat16, SDPA, local tokenizers, greedy decoding, seed 17, batch 8, 8,192 input tokens, and 128 new tokens. Install packages and a compatible CUDA build of PyTorch in your own environment. No package, dataset, or model download is needed for the CPU checks below.
 
-Acquire the existing datasets under their own terms; no new annotation is involved:
-
-| Input | Official source and pinned revision | Local files consumed by the code |
-|---|---|---|
-| SBIC v2 aggregate | [Official archive](https://maartensap.com/social-bias-frames/SBIC.v2.tgz), archive SHA-256 `07cabae1ee0289392ea11b494c0012578bd39a582d58dc5ebd8edc3deda6bc5b`; [data statement](https://maartensap.com/social-bias-frames/DATASTATEMENT.MD) | `paper1/data/sbic/SBIC.v2.agg.{trn,dev,tst}.csv` |
-| HateCheck | [Official repository](https://github.com/paul-rottger/hatecheck-data/tree/3490854f969111a32c55c05f0d9788b471337fa9), commit `3490854f969111a32c55c05f0d9788b471337fa9` | `paper1/data/hatecheck/test_suite_cases.csv` and `paper1/data/hatecheck/source_manifest.json` |
-
-The SBIC CSV SHA-256 values are `d60770d7b1e37fdc8260029ee59c3759ae7329de378c7e7986c528c625a6260f` (train), `b8fcf3a992a0de47c41191d00058c659b3e2744e2d051bbbb23d458deb5b35a2` (development), and `12982a534e60a2275f134d07038d1bfd46b252835f269959ec7ed6216f5ee53a` (test). HateCheck's [CSV at the pinned commit](https://raw.githubusercontent.com/paul-rottger/hatecheck-data/3490854f969111a32c55c05f0d9788b471337fa9/test_suite_cases.csv) has SHA-256 `ecf0dc1e93fccc90b6f880e632b19e635c0f0a68b3157915a9e20b6938f121cf`. Copy `metadata/hatecheck_source_manifest.json` to `paper1/data/hatecheck/source_manifest.json` after acquiring the CSV. The manifest is source metadata, not a dataset. See [DATA_INTERFACE.md](DATA_INTERFACE.md) for exact file schemas, placement, and checksum commands. The importer checks the CSV hash, revision, required native columns (`case_id`, `test_case`, `label_gold`, `direction`, `templ_id`, `functionality`), and 3,728 rows. SBIC requires `post`, `offensiveYN`, `intentYN`, and `sexYN`; its original train/dev/test partitions stay fixed. Exact original text defines resampling groups. HateCheck's native `templ_id` defines template blocks. Neither task uses reply graphs, historical extension groups, or new judgments.
-
-Use these local model snapshots (weights are not included):
-
-| Model ID | Exact revision | Example local path |
-|---|---|---|
-| [`Qwen/Qwen2.5-7B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | `a09a35458c702b33eeacc393d103063234e8bc28` | `models/qwen2_5_7b_instruct` |
-| [`ibm-granite/granite-3.3-8b-instruct`](https://huggingface.co/ibm-granite/granite-3.3-8b-instruct) | `51dd4bc2ade4059a6bd87649d68aa11e4fb2529b` | `models/granite_3_3_8b_instruct` |
-
-The preparation output contains the post text and existing labels, so keep all generated directories private. Paths below are relative examples and must be fresh. The source scripts reject existing output directories/files where required.
 
 ## Offline CPU checks
 
